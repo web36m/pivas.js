@@ -7,7 +7,7 @@
 		<script type="text/javascript" src="/lib/PV.js"></script>
 		<script type="text/javascript">
 			PV.init({
-				version : '1.0.2',
+				version : '1.0.1',
 				languages : ['en'],
 				preload : [
 					'/lib/PV.Cookie.js',
@@ -33,6 +33,9 @@
 			<a href="/" class="head-logo"><img alt="PiVas" src="/app/templates/main/img/logo.png"></a>
 			<span class="head-title">JavaScript framework - Example</span>
 		</div>
+		<div id="view1"></div>
+		<div id="view2"></div>
+		<div id="tree"></div>
 		<script type="text/pv-template" id="tree.html">
 			<h2 pv="title"></h2>
 			<ul pv="list">
@@ -62,12 +65,13 @@
 ]
 			</textarea>
 		</script>
-		<div id="tree"></div>
 		<script type="text/javascript">
 			PV.ready(function(){
 				PV.Language.identify();
 				PV.factoryModule('Tree');
+				PV.factoryModule('Example1');
+				PV.factoryModule('Example2');
 			});
-		</script>
+		</script> 
 	</body>
 </html>
