@@ -12,6 +12,7 @@
 				preload : [
 					'/lib/PV.Cookie.js',
 					'/lib/PV.Dom.js',
+					'/lib/PV.Template.js',
 					'/lib/PV.Animate.js',
 					'/lib/PV.WebSocket.js',
 					'/lib/PV.Language.js',
@@ -32,13 +33,40 @@
 			<a href="/" class="head-logo"><img alt="PiVas" src="/app/templates/main/img/logo.png"></a>
 			<span class="head-title">JavaScript framework - Example</span>
 		</div>
-		<div id="view1"></div>
-		<div id="view2"></div>
+		<script type="text/pv-template" id="tree.html">
+			<h2 pv="title"></h2>
+			<ul pv="list">
+				<li pv="item"><a pv="name"></a></li>
+			</ul>
+			<textarea pv="json">
+[
+  {
+    "name" : "Root",
+    "nodes" : [
+      {
+        "name" : "Inserted"
+      },
+      {
+        "name" : "Next Inserted",
+        "nodes" : [
+          {
+            "name" : "Foliage"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name" : "Next"
+  }
+]
+			</textarea>
+		</script>
+		<div id="tree"></div>
 		<script type="text/javascript">
 			PV.ready(function(){
 				PV.Language.identify();
-				PV.factoryModule('Example1');
-				PV.factoryModule('Example2');
+				PV.factoryModule('Tree');
 			});
 		</script>
 	</body>

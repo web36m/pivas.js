@@ -1,0 +1,33 @@
+#tree {
+	margin: 20px auto;
+	width: 450px;
+	padding: 20px;
+	background: #FFFFFF;
+	text-align: center;
+	border-radius: 4px;
+	border: 1px solid #E5E5E5;
+}
+#tree ul {
+	padding: 0;
+	list-style: none;
+	text-align: left;
+}
+#tree ul li {
+	margin: 5px 20px;
+	padding: 0;
+	display: block;
+}
+#tree ul li a {
+	padding: 2px 10px;
+	background: #F5F5F5;
+	border-radius: 4px;
+	border: 1px solid #E5E5E5;
+}
+#tree h2 {
+	margin: 0;
+	padding: 0;
+}
+#tree textarea {
+	width: 100%;
+	height: 150px;
+}
