@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>PiVas.JS</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<link rel="stylesheet" href="/app/templates/main/style.css"/>
+		<script type="text/javascript" src="/lib/PV.js"></script>
+		<script type="text/javascript">
+			PV.init({
+				version : '1.0.2',
+				languages : ['en'],
+				preload : [
+					'/lib/PV.Cookie.js',
+					'/lib/PV.Dom.js',
+					'/lib/PV.Animate.js',
+					'/lib/PV.WebSocket.js',
+					'/lib/PV.Language.js',
+					'/lib/PV.Dom.Slider.js',
+					'/lib/PV.Dom.Switch.js',
+					'/lib/PV.Dom.Grid.js'
+				],
+				descriptors : '/app/descriptors',
+				locales : '/app/locales',
+				modules : '/app/modules',
+				templates : '/app/templates',
+				views : '/app/views'
+			});
+		</script>
+	</head>
+	<body>
+		<div class="head">
+			<a href="/" class="head-logo"><img alt="PiVas" src="/app/templates/main/img/logo.png"></a>
+			<span class="head-title">JavaScript framework - Example</span>
+		</div>
+		<div id="view1"></div>
+		<div id="view2"></div>
+		<script type="text/javascript">
+			PV.ready(function(){
+				PV.Language.identify();
+				PV.factoryModule('Example1');
+				PV.factoryModule('Example2');
+			});
+		</script>
+	</body>
+</html>
