@@ -1,20 +1,20 @@
 PV.declare('Tree', 'View', function(){
 
 	var wrapper = document.getElementById('tree');
-	var block = PV.Template('tree.html');
 	var css = PV.Dom.css('/app/templates/tree/style.css');
-	var data;
+	var data, tpl;
+	var self = this;
 
 	var makeTree = function(data, node){
 		node.innerHTML = '';
 		PV.each(data, function(i, item){
 			var ul;
-			var li = block.clone('item');
-			var a = block.clone('name');
+			var li = tpl.clone('item');
+			var a = tpl.clone('name');
 			a.innerHTML = item.name;
 			li.appendChild(a);
 			if ('nodes' in item){
-				ul = block.clone('list');
+				ul = tpl.clone('list');
 				li.appendChild(ul);
 				makeTree(item.nodes, ul);
 			}
@@ -22,31 +22,54 @@ PV.declare('Tree', 'View', function(){
 		});
 	};
 
-	block.list.removeChild(block.item);
-	block.item.removeChild(block.name);
-	block.title.innerHTML = this.getText('title');
+	var isReady = function(key){
+		var i, j;
+		if (key in isReady.queue){
+			delete isReady.queue[key];
+			for (i in isReady.queue){
+				return;
+			}
+			isReady.onready instanceof Function && isReady.onready.call(self);
+		}
+	};
 
-	try {
-		data = JSON.parse(block.json.value);
-	}catch(e){
-		data = [];
-	}
-	makeTree(data, block.list);
-	block.json.onchange = block.json.onkeyup = block.json.onmouseup = function(){
+	isReady.queue = {
+		tpl : true,
+		css : true
+	};
+
+	isReady.onready = function(){
+		tpl.renderTo(wrapper);
+	};
+
+	PV.Template('tree/index.html').onready(function(){
+		tpl = this;
+		tpl.list.removeChild(tpl.item);
+		tpl.item.removeChild(tpl.name);
+		tpl.title.innerHTML = self.getText('title');
 		try {
-			data = JSON.parse(block.json.value);
+			data = JSON.parse(tpl.json.value);
 		}catch(e){
 			data = [];
 		}
-		makeTree(data, block.list);
-	};
-	
+		makeTree(data, tpl.list);
+		tpl.json.onchange = tpl.json.onkeyup = tpl.json.onmouseup = function(){
+			try {
+				data = JSON.parse(tpl.json.value);
+			}catch(e){
+				data = [];
+			}
+			makeTree(data, tpl.list);
+		};
+		isReady('tpl');
+	});
+
 	css.render(function(){
-		block.renderTo(wrapper);
+		isReady('css');
 	}, this);
 
 	this.destroy = function(){
-		block.remove();
+		this.remove();
 	};
 
 });
