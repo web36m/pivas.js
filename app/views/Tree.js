@@ -34,7 +34,6 @@ PV.declare('Tree', 'View', function(){
 	};
 
 	isReady.queue = {
-		tpl : true,
 		css : true
 	};
 
@@ -42,27 +41,24 @@ PV.declare('Tree', 'View', function(){
 		tpl.renderTo(wrapper);
 	};
 
-	PV.Template('tree/index.html').onready(function(){
-		tpl = this;
-		tpl.list.removeChild(tpl.item);
-		tpl.item.removeChild(tpl.name);
-		tpl.title.innerHTML = self.getText('title');
+	tpl = PV.Template(document.getElementById('tree.html').innerHTML);
+	tpl.list.removeChild(tpl.item);
+	tpl.item.removeChild(tpl.name);
+	tpl.title.innerHTML = self.getText('title');
+	try {
+		data = JSON.parse(tpl.json.value);
+	}catch(e){
+		data = [];
+	}
+	makeTree(data, tpl.list);
+	tpl.json.onchange = tpl.json.onkeyup = tpl.json.onmouseup = function(){
 		try {
 			data = JSON.parse(tpl.json.value);
 		}catch(e){
 			data = [];
 		}
 		makeTree(data, tpl.list);
-		tpl.json.onchange = tpl.json.onkeyup = tpl.json.onmouseup = function(){
-			try {
-				data = JSON.parse(tpl.json.value);
-			}catch(e){
-				data = [];
-			}
-			makeTree(data, tpl.list);
-		};
-		isReady('tpl');
-	});
+	};
 
 	css.render(function(){
 		isReady('css');
