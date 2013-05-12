@@ -22,7 +22,9 @@ Independent modules. Loading of scripts on the fly. Object Notation document str
 --
 
 ###How to start
-
+```
+sh install.sh
+```
 ######Insert into head of html document.
 
 ```html
@@ -60,3 +62,8 @@ PV.ready(function(){
 });
 </script>
 ```
+######View Example.
+```
+grunt connect
+```
+open in browser [http://localhost:1337/example/](http://localhost:1337/example/)
