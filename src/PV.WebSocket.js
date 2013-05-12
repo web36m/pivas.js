@@ -13,8 +13,6 @@
 			socket.onclose = function(){
 				events.trigger('disconnect');
 			};
-		} else {
-			// альтернативные костыли
 		}
 		this.on = events.on;
 		this.emit = function(data){
@@ -23,7 +21,7 @@
 		this.close = function(){
 			socket.close();
 		};
-	}
+	};
 	PV.define('PV.WebSocket', function(server){
 		return new WS(server);
 	});

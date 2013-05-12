@@ -1,0 +1,33 @@
+{
+  "name": "PiVas.JS",
+  "version": "1.0.1",
+  "description": "JavaScript framework for scalable web applications.",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pivas/PiVas.git"
+  },
+  "keywords": [
+    "javascript",
+    "framework",
+    "web",
+    "app"
+  ],
+  "author": "Vasily Shilov (vasily@pivas.net)",
+  "license": {
+    "type": "MIT",
+    "url": "https://github.com/pivas/PiVas/blob/master/LICENSE"
+  },
+  "site": "http://pivas.net/",
+  "gitHead": "3301ff8f0f8db104797dfb77e46e753f21715cd6",
+  "readmeFilename": "README.md",
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-uglify": "~0.2.0",
+    "grunt-connect": "~0.2.0"
+  }
+}

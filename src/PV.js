@@ -208,7 +208,9 @@ var PV = PV || {};
 		};
 		this.deliver = function(source, method, args, context){
 			context = context || global;
-			if (handlers['import'][method] && handlers['import'][method][source] && handlers['export'][method]){
+			if (((handlers['import'][method] && handlers['import'][method][source])
+			|| (handlers['import']['*'] && handlers['import']['*'][source]))
+			&& handlers['export'][method]){
 				PV.each(handlers['export'][method], function(moduleName){
 					var module = PV.Modules.Running.get(moduleName);
 					if (module){

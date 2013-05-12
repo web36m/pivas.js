@@ -3,35 +3,23 @@
 	<head>
 		<title>PiVas.JS</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<link rel="stylesheet" href="/app/templates/main/style.css"/>
-		<script type="text/javascript" src="/lib/PV.js"></script>
+		<link rel="stylesheet" href="app/templates/main/style.css"/>
+		<script type="text/javascript" src="../dist/PiVas.js"></script>
 		<script type="text/javascript">
 			PV.init({
 				version : '1.0.1',
 				languages : ['en'],
-				preload : [
-					'/lib/PV.Cookie.js',
-					'/lib/PV.Dom.js',
-					'/lib/PV.Template.js',
-					'/lib/PV.Animate.js',
-					'/lib/PV.Http.js',
-					'/lib/PV.WebSocket.js',
-					'/lib/PV.Language.js',
-					'/lib/PV.Dom.Slider.js',
-					'/lib/PV.Dom.Switch.js',
-					'/lib/PV.Dom.Grid.js'
-				],
-				descriptors : '/app/descriptors',
-				locales : '/app/locales',
-				modules : '/app/modules',
-				templates : '/app/templates',
-				views : '/app/views'
+				descriptors : 'app/descriptors',
+				locales : 'app/locales',
+				modules : 'app/modules',
+				templates : 'app/templates',
+				views : 'app/views'
 			});
 		</script>
 	</head>
 	<body>
 		<div class="head">
-			<a href="/" class="head-logo"><img alt="PiVas" src="/app/templates/main/img/logo.png"></a>
+			<a href="/" class="head-logo"><img alt="PiVas" src="app/templates/main/img/logo.png"></a>
 			<span class="head-title">JavaScript framework - Example</span>
 		</div>
 		<div id="view1"></div>

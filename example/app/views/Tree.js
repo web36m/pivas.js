@@ -1,7 +1,7 @@
 PV.declare('Tree', 'View', function(){
 
 	var wrapper = document.getElementById('tree');
-	var css = PV.Dom.css('/app/templates/tree/style.css');
+	var css = PV.Dom.css('app/templates/tree/style.css');
 	var data, tpl;
 	var self = this;
 

@@ -1,7 +1,7 @@
 PV.declare('Example1', 'View', function(config){
 
 	var self = this;
-	var css = PV.Dom.css('/app/templates/example1/style.css');
+	var css = PV.Dom.css('app/templates/example1/style.css');
 	var wrapper = document.getElementById('view1');
 
 	var block = PV.Dom.block({
