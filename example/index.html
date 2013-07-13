@@ -4,18 +4,6 @@
 		<title>PiVas.JS</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<link rel="stylesheet" href="app/templates/main/style.css"/>
-		<script type="text/javascript" src="../dist/PiVas.js"></script>
-		<script type="text/javascript">
-			PV.init({
-				version : '1.0.1',
-				languages : ['en'],
-				descriptors : 'app/descriptors',
-				locales : 'app/locales',
-				modules : 'app/modules',
-				templates : 'app/templates',
-				views : 'app/views'
-			});
-		</script>
 	</head>
 	<body>
 		<div class="head">
@@ -25,14 +13,8 @@
 		<div id="view1"></div>
 		<div id="view2"></div>
 		<div id="tree"></div>
-		<script type="text/javascript">
-			PV.ready(function(){
-				PV.Language.identify();
-				PV.factoryModule('Tree');
-				PV.factoryModule('Example1');
-				PV.factoryModule('Example2');
-			});
-		</script>
+		<script type="text/javascript" src="lib/pivas.js"></script>
+		<script type="text/javascript" src="app/app.js"></script>
 		<script type="text/pv-template" id="tree.html">
 <h2 pv="title"></h2>
 <ul pv="list">

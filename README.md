@@ -23,7 +23,7 @@ Independent modules. Loading of scripts on the fly. Object Notation document str
 
 ###How to start
 ```
-sh install.sh
+bower install pivas
 ```
 ######Insert into head of html document.
 
@@ -62,8 +62,12 @@ PV.ready(function(){
 });
 </script>
 ```
+OR insert in the end of the body of html document.    
+```html
+<script type="text/javascript" src="lib/pivas.js"></script>
+```
 ######View Example.
 ```
-grunt connect
+grunt server
 ```
-open in browser [http://localhost:1337/example/](http://localhost:1337/example/)
+open in browser [http://localhost:8714/](http://localhost:8714/)

@@ -1,0 +1,18 @@
+{
+  "name": "pivas",
+  "version": "1.0.2",
+  "description": "JavaScript framework for scalable web applications. Focuses on a full asynchronous web applications.",
+  "keywords": [
+    "pivas",
+    "javascript",
+    "framework"
+  ],
+  "main": "dest/pivas.js",
+  "readmeFilename": "README.md",
+  "license": "MIT",
+  "author": "Shilov Vasily (vasily@pivas.net)",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/pivas/pivas.js.git"
+  }
+}

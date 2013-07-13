@@ -3,6 +3,6 @@
 *.diff
 *.patch
 *.log
-dist
+components
 node_modules
 *~
